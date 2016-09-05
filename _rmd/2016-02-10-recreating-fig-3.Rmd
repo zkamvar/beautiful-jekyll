@@ -4,6 +4,10 @@ layout: 'post'
 tags: ['R', 'poppr', 'multilocus genotype', 'ggplot2']
 ---
 
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(fig.height = 12, fig.width = 4, out.width = "1000px")
+```
+
 Motivation
 ==========
 
@@ -58,7 +62,7 @@ Creating the Barplot
 The barplot is a barplot of the MLG counts ordered from most abundant to least
 abundant.
 
-```{r barplot, fig.width = 5, fig.height = 15}
+```{r barplot}
 
 # This obtains a table of sorted MLG counts for adjusting the axes.
 mlg_order <- table(mll(ramdat)) %>% 
@@ -90,7 +94,7 @@ Creating the Subway plot
 This plot displays the MLGs occurring across years. It's a nice graphical way of
 displaying the results of `mlg.crosspop()` when the populations are years.
 
-```{r subwayplot, fig.width = 5, fig.height = 15}
+```{r subwayplot}
 
 mlg_range <- mlg.crosspop(ramdat, mlgsub = unique(mll(ramdat)), 
                           df = TRUE, quiet = TRUE)
@@ -125,7 +129,7 @@ the margins, but it might be easier to export it as an svg, and then slide one
 over to the other in 2 minutes in inkscape.
 
 
-```{r cowplot, fig.width = 5, fig.height = 15}
+```{r cowplot}
 plot_grid(ranges, bars, align = "h", rel_widths = c(2.5, 1))
 ```
 
