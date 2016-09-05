@@ -590,11 +590,9 @@ table tr td :last-child {
 pre {
   font-size: 16px;
   line-height: 1.5em;
-  padding-left: 10px;
 }
 pre code {
   white-space: pre;
-  padding-left: 10px;
 }
 pre.highlight, .highlight > pre, td.code pre {
   background: #FAFAFA;
@@ -603,7 +601,6 @@ pre.highlight, .highlight > pre, td.code pre {
   background-size: 3em 3em;
   background-position: 0px 10px;
   border-left: 7px solid #444;
-  padding-left: 10px;
 }
 code table, code table td, code table th, code table tbody, code table tr,
 td.gutter pre {
