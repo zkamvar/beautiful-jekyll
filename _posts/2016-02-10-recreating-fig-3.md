@@ -111,7 +111,7 @@ bars <- ggplot(mlg_order, aes(x = MLG, y = Count, fill = MLG)) +
 bars
 {% endhighlight %}
 
-<img src="http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/barplot-1.png" title="plot of chunk barplot" alt="plot of chunk barplot" width="1000px" />
+![plot of chunk barplot](http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/barplot-1.png)
 
 Creating the Subway plot
 ------------------------
@@ -141,7 +141,7 @@ names(mlg_range)[2] <- "Year"
   scale_y_discrete(limits = mlg_order$MLG))
 {% endhighlight %}
 
-<img src="http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/subwayplot-1.png" title="plot of chunk subwayplot" alt="plot of chunk subwayplot" width="1000px" />
+![plot of chunk subwayplot](http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/subwayplot-1.png)
 
 
 Aligning with cowplot
@@ -159,7 +159,7 @@ over to the other in 2 minutes in inkscape.
 plot_grid(ranges, bars, align = "h", rel_widths = c(2.5, 1))
 {% endhighlight %}
 
-<img src="http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/cowplot-1.png" title="plot of chunk cowplot" alt="plot of chunk cowplot" width="1000px" />
+![plot of chunk cowplot](http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/cowplot-1.png)
 
 Conclusion
 ==========

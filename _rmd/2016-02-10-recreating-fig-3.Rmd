@@ -5,7 +5,7 @@ tags: ['R', 'poppr', 'multilocus genotype', 'ggplot2']
 ---
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(fig.height = 12, fig.width = 4, out.width = "1000px")
+knitr::opts_chunk$set(fig.height = 12, fig.width = 4)
 ```
 
 Motivation
