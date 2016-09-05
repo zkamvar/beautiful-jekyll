@@ -21,9 +21,9 @@ tools.
 
 I created figure three originally in two parts with ggplot2 and then manually
 aligned the two figures in inkscape. Since then, the package cowplot has come
-around and made this process easier. I have my old code up here: https://github.
-com/zkamvar/Sudden_Oak_Death_in_Oregon_Forests/blob/master/mlg_distribution.Rmd,
-and since the packages have changed since then, I'm redoing the code here.
+around and made this process easier. I have my old code up here:
+[mlg_distribution.Rmd][mlgdist], and since the packages have changed since then,
+I'm redoing the code here.
 
 Analysis
 ========
@@ -33,8 +33,70 @@ Analysis
 
 {% highlight r %}
 library("poppr")    # Note, v.2.2.0 or greater is needed for the %>% operator
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Loading required package: adegenet
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Loading required package: ade4
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## 
+##    /// adegenet 2.0.2 is loaded ////////////
+## 
+##    > overview: '?adegenet'
+##    > tutorials/doc/questions: 'adegenetWeb()' 
+##    > bug reports/feature requests: adegenetIssues()
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## This is poppr version 2.2.1. To get started, type package?poppr
+## OMP parallel support: available
+{% endhighlight %}
+
+
+
+{% highlight r %}
 library("ggplot2")  # Plotting
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Need help? Try the ggplot2 mailing list:
+## http://groups.google.com/group/ggplot2.
+{% endhighlight %}
+
+
+
+{% highlight r %}
 library("cowplot")  # Grouping the plots
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## 
+## Attaching package: 'cowplot'
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## The following object is masked from 'package:ggplot2':
+## 
+##     ggsave
 {% endhighlight %}
 
 The data from the paper has been stored in *poppr* as "Pram", but it includes 
@@ -203,7 +265,7 @@ devtools::session_info()
 ##  setting  value                       
 ##  version  R version 3.3.1 (2016-06-21)
 ##  system   x86_64, darwin13.4.0        
-##  ui       RStudio (0.99.1292)         
+##  ui       X11                         
 ##  language (EN)                        
 ##  collate  en_US.UTF-8                 
 ##  tz       America/Los_Angeles         
@@ -267,7 +329,6 @@ devtools::session_info()
 ##  R6           2.1.3       2016-08-19 cran (@2.1.3)                           
 ##  Rcpp         0.12.6      2016-07-19 CRAN (R 3.3.0)                          
 ##  reshape2     1.4.1       2014-12-06 CRAN (R 3.2.0)                          
-##  rstudioapi   0.6         2016-06-27 cran (@0.6)                             
 ##  scales       0.4.0       2016-02-26 CRAN (R 3.2.3)                          
 ##  seqinr       3.3-0       2016-07-19 CRAN (R 3.3.0)                          
 ##  shiny        0.13.2.9005 2016-09-02 Github (rstudio/shiny@1ff52c5)          
@@ -284,3 +345,4 @@ devtools::session_info()
 [sod]: http://apsjournals.apsnet.org/doi/10.1094/PHYTO-12-14-0350-FI
 [sod-free]: https://www.researchgate.net/publication/278039693_Spatial_and_Temporal_Analysis_of_Populations_of_the_Sudden_Oak_Death_Pathogen_in_Oregon_Forests
 [analysis]: https://github.com/zkamvar/Sudden_Oak_Death_in_Oregon_Forests#readme
+[mlgdist]: https://github.com/zkamvar/Sudden_Oak_Death_in_Oregon_Forests/blob/master/mlg_distribution.Rmd

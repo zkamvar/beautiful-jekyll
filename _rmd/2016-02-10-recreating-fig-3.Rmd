@@ -23,9 +23,9 @@ tools.
 
 I created figure three originally in two parts with ggplot2 and then manually
 aligned the two figures in inkscape. Since then, the package cowplot has come
-around and made this process easier. I have my old code up here: https://github.
-com/zkamvar/Sudden_Oak_Death_in_Oregon_Forests/blob/master/mlg_distribution.Rmd,
-and since the packages have changed since then, I'm redoing the code here.
+around and made this process easier. I have my old code up here:
+[mlg_distribution.Rmd][mlgdist], and since the packages have changed since then,
+I'm redoing the code here.
 
 Analysis
 ========
@@ -163,3 +163,4 @@ devtools::session_info()
 [sod]: http://apsjournals.apsnet.org/doi/10.1094/PHYTO-12-14-0350-FI
 [sod-free]: https://www.researchgate.net/publication/278039693_Spatial_and_Temporal_Analysis_of_Populations_of_the_Sudden_Oak_Death_Pathogen_in_Oregon_Forests
 [analysis]: https://github.com/zkamvar/Sudden_Oak_Death_in_Oregon_Forests#readme
+[mlgdist]: https://github.com/zkamvar/Sudden_Oak_Death_in_Oregon_Forests/blob/master/mlg_distribution.Rmd
