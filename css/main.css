@@ -601,10 +601,11 @@ pre.highlight, .highlight > pre, td.code pre {
   background-size: 3em 3em;
   background-position: 0px 10px;
   border-left: 7px solid #444;
+  padding-left: 7px;
 }
 code table, code table td, code table th, code table tbody, code table tr,
 td.gutter pre {
-  padding: 10px;
+  padding: 0;
   border: none;
   background-color: #fff;
 }
