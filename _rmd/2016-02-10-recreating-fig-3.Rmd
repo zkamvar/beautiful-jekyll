@@ -5,7 +5,7 @@ tags: ['R', 'poppr', 'multilocus genotype', 'ggplot2']
 ---
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(fig.height = 12, fig.width = 4, fig.align = "center")
+knitr::opts_chunk$set(fig.height = 15, fig.width = 5, fig.align = "center", dpi = 150)
 ```
 
 Motivation
@@ -73,7 +73,7 @@ mlg_order <- table(mll(ramdat)) %>%
 bars <- ggplot(mlg_order, aes(x = MLG, y = Count, fill = MLG)) + 
   geom_bar(stat = "identity") +
   theme_classic() +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 175)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 180)) +
   scale_fill_manual(values = myPal) +
   geom_text(aes(label = Count), size = 2.5, hjust = 0, fontface = "bold") +
   theme(axis.text.y = element_blank()) + 

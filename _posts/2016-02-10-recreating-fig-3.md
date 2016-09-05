@@ -96,7 +96,7 @@ mlg_order <- table(mll(ramdat)) %>%
 bars <- ggplot(mlg_order, aes(x = MLG, y = Count, fill = MLG)) + 
   geom_bar(stat = "identity") +
   theme_classic() +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 175)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 180)) +
   scale_fill_manual(values = myPal) +
   geom_text(aes(label = Count), size = 2.5, hjust = 0, fontface = "bold") +
   theme(axis.text.y = element_blank()) + 
@@ -267,8 +267,6 @@ devtools::session_info()
 ##  R6           2.1.3       2016-08-19 cran (@2.1.3)                           
 ##  Rcpp         0.12.6      2016-07-19 CRAN (R 3.3.0)                          
 ##  reshape2     1.4.1       2014-12-06 CRAN (R 3.2.0)                          
-##  rmarkdown    1.0.9010    2016-08-24 Github (rstudio/rmarkdown@242be4a)      
-##  rsconnect    0.4.3       2016-05-02 CRAN (R 3.3.0)                          
 ##  rstudioapi   0.6         2016-06-27 cran (@0.6)                             
 ##  scales       0.4.0       2016-02-26 CRAN (R 3.2.3)                          
 ##  seqinr       3.3-0       2016-07-19 CRAN (R 3.3.0)                          
@@ -280,8 +278,7 @@ devtools::session_info()
 ##  tibble       1.2         2016-08-26 cran (@1.2)                             
 ##  vegan        2.4-0       2016-06-15 CRAN (R 3.3.0)                          
 ##  withr        1.0.2       2016-06-20 cran (@1.0.2)                           
-##  xtable       1.8-2       2016-02-05 CRAN (R 3.2.3)                          
-##  yaml         2.1.13      2014-06-12 CRAN (R 3.2.0)
+##  xtable       1.8-2       2016-02-05 CRAN (R 3.2.3)
 {% endhighlight %}
 [fig3]: https://www.researchgate.net/publication/278039693_Spatial_and_Temporal_Analysis_of_Populations_of_the_Sudden_Oak_Death_Pathogen_in_Oregon_Forests/figures
 [sod]: http://apsjournals.apsnet.org/doi/10.1094/PHYTO-12-14-0350-FI
