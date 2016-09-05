@@ -104,14 +104,15 @@ bars <- ggplot(mlg_order, aes(x = MLG, y = Count, fill = MLG)) +
   theme(legend.position = "none") +
   theme(text = element_text(family = "Helvetica")) +
   theme(axis.title.y = element_blank()) +
-  theme(plot.margin = unit(c(1, 1, 0, 1), "lines")) + 
+  # From the documentation for theme: top, right, bottom, left
+  theme(plot.margin = unit(c(1, 1, 1, 0), "lines")) + 
   scale_x_discrete(limits = mlg_order$MLG) +
   coord_flip()
 
 bars
 {% endhighlight %}
 
-![plot of chunk barplot](http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/barplot-1.png)
+<img src="http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/barplot-1.png" title="plot of chunk barplot" alt="plot of chunk barplot" style="display: block; margin: auto;" />
 
 Creating the Subway plot
 ------------------------
@@ -126,22 +127,34 @@ mlg_range <- mlg.crosspop(ramdat, mlgsub = unique(mll(ramdat)),
 names(mlg_range)[2] <- "Year"
 
 # Creating the subway plot
-(ranges <- ggplot(mlg_range, aes(x = Year, y = MLG, group = MLG, color = MLG)) + 
+ranges <- ggplot(mlg_range, aes(x = Year, y = MLG, group = MLG, color = MLG)) + 
   geom_line(size = 1, linetype = 1) + 
   geom_point(size = 5, pch = 21, fill = "white") +
   geom_text(aes(label = Count), color = "black", size = 2.5) + 
   scale_color_manual(values = myPal) + 
   ylab("Multilocus Genotype") +
   theme_bw() + 
-  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),
-        text = element_text(family = "Helvetica"),
-        legend.position = "none",
-        axis.line = element_line(colour = "black"),
-        plot.margin = unit(c(1, 0, 1, 1), "lines")) +
-  scale_y_discrete(limits = mlg_order$MLG))
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+  theme(text = element_text(family = "Helvetica")) +
+  theme(legend.position = "none") +
+  theme(axis.line = element_line(colour = "black")) +
+  # From the documentation for theme: top, right, bottom, left
+  theme(plot.margin = unit(c(1, 0, 1, 1), "lines")) +
+  scale_y_discrete(limits = mlg_order$MLG)
+
+ranges
 {% endhighlight %}
 
-![plot of chunk subwayplot](http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/subwayplot-1.png)
+<img src="http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/subwayplot-1.png" title="plot of chunk subwayplot" alt="plot of chunk subwayplot" style="display: block; margin: auto;" />
+
+> **A word on margins**
+> 
+> Cowplot is nice for placing the ggplot objects next to each other in one
+> frame, but it likes to give them room to spread out. To get the plots as close
+> together as possible, I'm cutting out the left and right margins of the
+> barplot and subway plot, respectively. This is done with the `plot.margin`
+> argument to `theme()` which organizes the widths as **top**, **right**,
+> **bottom**, **left**.
 
 
 Aligning with cowplot
@@ -159,7 +172,7 @@ over to the other in 2 minutes in inkscape.
 plot_grid(ranges, bars, align = "h", rel_widths = c(2.5, 1))
 {% endhighlight %}
 
-![plot of chunk cowplot](http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/cowplot-1.png)
+<img src="http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/cowplot-1.png" title="plot of chunk cowplot" alt="plot of chunk cowplot" style="display: block; margin: auto;" />
 
 Conclusion
 ==========
