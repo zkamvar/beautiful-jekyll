@@ -590,10 +590,10 @@ table tr td :last-child {
 pre {
   font-size: 16px;
   line-height: 1.5em;
+  padding-left: 10px;
 }
 pre code {
   white-space: pre;
-  padding-left: 10px;
 }
 pre.highlight, .highlight > pre, td.code pre {
   background: #FAFAFA;
