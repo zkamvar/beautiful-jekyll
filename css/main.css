@@ -593,7 +593,7 @@ pre {
 }
 pre code {
   white-space: pre;
-  padding: 10px;
+  padding-left: 10px;
 }
 pre.highlight, .highlight > pre, td.code pre {
   background: #FAFAFA;
