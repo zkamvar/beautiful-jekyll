@@ -25,7 +25,7 @@ rmd2md <- function(file, path_site = "~/Documents/zkamvar.github.io") {
 	# this did not work with new gitHub
 	#opts_knit$set(base.url = "../",base.dir=path_site)
 	knitr::opts_knit$set(base.url = "http://zkamvar.github.io/")
-	knitr::opts_chunk$set(fig.path = "figures/")
+	knitr::opts_chunk$set(fig.path = paste0("figures/", file, "/"))
 	## Actually knit the RMD file
 	knitr::knit(text = content, output = outFile)
 	invisible()
