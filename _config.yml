@@ -22,10 +22,12 @@ description: ZNK's blog of Biology, R, and Science
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
+  Ph. D. Dissertation: "dissertation"
   Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-    - GitHub Pages: "https://pages.github.com/"
+    - R package *poppr*: "https://github.com/grunwaldlab/poppr"
+    - Inspiration Dissemination: "http://blogs.oregonstate.edu/inspiration"
+    - Population Genetics Tutorials in R: "http://popgen.nescent.org"
+    - Clonal Population Genetics in R: "http://grunwaldlab.github.io/Population_Genetics_in_R"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
