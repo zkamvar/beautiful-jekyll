@@ -5,7 +5,8 @@ tags: ['R', 'poppr', 'multilocus genotype', 'ggplot2']
 ---
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(fig.height = 15, fig.width = 5, fig.align = "center", dpi = 150)
+knitr::opts_chunk$set(fig.height = 15, fig.width = 5, out.width = "50%", 
+											fig.align = "center", dpi = 150)
 ```
 
 Motivation
@@ -141,7 +142,7 @@ over to the other in 2 minutes in inkscape.
 
 
 ```{r cowplot}
-plot_grid(ranges, bars, align = "h", rel_widths = c(2.5, 1))
+cowplot::plot_grid(ranges, bars, align = "h", rel_widths = c(2.5, 1))
 ```
 
 Conclusion
