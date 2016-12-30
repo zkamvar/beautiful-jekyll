@@ -73,7 +73,7 @@ x %>%
             lty = "Release"))
 {% endhighlight %}
 
-<img src="http://zkamvar.github.io/figures/2016-12-29-poppr-downloads/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="100%" style="display: block; margin: auto;" />
+<img src="http://zkamvar.github.io/figures/2016-12-29-poppr-downloads/cumulative-1.png" title="plot of chunk cumulative" alt="plot of chunk cumulative" width="100%" style="display: block; margin: auto;" />
 
 You can see above that I submitted a lot of patch versions early on, and even
 had to submit some within a few days of each other, but as time went along, I
@@ -113,9 +113,9 @@ x %>%
   ggtitle("Daily poppr downloads by year")
 {% endhighlight %}
 
-<img src="http://zkamvar.github.io/figures/2016-12-29-poppr-downloads/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="100%" style="display: block; margin: auto;" />
+<img src="http://zkamvar.github.io/figures/2016-12-29-poppr-downloads/by_year-1.png" title="plot of chunk by_year" alt="plot of chunk by_year" width="100%" style="display: block; margin: auto;" />
 
-## Developing poppr
+## Developing *poppr*
 
 If someone told me five years ago that [my dissertation][0][^1]
 would be centered around an R package I developed, I probably would not have 
@@ -152,7 +152,7 @@ Genetics Conference][6] in March 2013.
 > While *poppr* is not the best name in the world, there were [far worse
 > suggestions](https://github.com/zkamvar/PiG_Multitool#whats-in-a-name).
 
-After R had officially released version [3.0.0][6.1] and the packages poppr
+After R had officially released version [3.0.0][6.1] and the packages *poppr*
 depended upon finally were working again, I submitted to CRAN, but I didn't get
 there in one try. I got a relatively tame email from Brian Ripley about the 
 vignette and some examples running too long. After that, we made our first
@@ -163,6 +163,41 @@ months after submission), so we revised a third draft and [submitted it as a
 pre-print][7] to PeerJ. After about a month, we got [positive reviews with minor
 revisions][8], and [the paper][9] was published on March 4th, 2014. As of now,
 according to PeerJ, it has been cited over 100 times.
+
+When poppr was released, it had [22 functions][10]. [As of now][nowpop], poppr
+has 81 public functions and 138 internal functions:
+
+
+{% highlight r %}
+# devtools::install_github("grunwaldlab/poppr@9170398f")
+suppressPackageStartupMessages(library("poppr"))
+filterfun <- . %>% unclass() %>% `[`(!grepl(., pattern = "[<>]"))
+publicfun <- lsf.str("package:poppr") %>% 
+  filterfun %>% 
+  length()
+allfun    <- lsf.str(envir = asNamespace("poppr"), all = TRUE) %>% 
+  filterfun %>% 
+  length()
+publicfun
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## [1] 81
+{% endhighlight %}
+
+
+
+{% highlight r %}
+allfun - publicfun
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## [1] 138
+{% endhighlight %}
 
 All in all, *poppr* came out of being in the right place at the right time when
 both R and software development were becoming more accessible. It is still in
@@ -184,11 +219,13 @@ because if software is difficult to use, fewer people will want to use it.
 [7]: https://peerj.com/preprints/161/
 [8]: https://peerj.com/articles/281/reviews/
 [9]: https://peerj.com/articles/281/
+[10]: https://peerj.com/articles/281/#table-1
 [dt]: https://CRAN.R-project.org/package=devtools
 [rg]: https://CRAN.R-project.org/package=roxygen2
 [tt]: https://CRAN.R-project.org/package=testthat
 [tv]: https://travis-ci.org
 [git]: https://git-scm.com/ 
+[nowpop]: https://github.com/grunwaldlab/poppr/commit/9170398f6552f27ab69b294172c97c8ee7a97ce0
 
 [^0]: See <http://yihui.name/en/2013/06/r-package-versioning/>. Major == breaking changes \| Minor == new functions \| Patch == bug fixes/documentation improvements
 [^1]: Here's a web version in case you don't want to download the 192 page PDF ^_^ <https://zkamvar.github.io/dissertation>

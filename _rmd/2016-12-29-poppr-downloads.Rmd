@@ -22,7 +22,7 @@ mirror, so the value is almost always lower than the true value). Here, I've
 created a graph that shows the cumulative number of downloads over the years,
 marking the times major, minor, and patch versions became available on CRAN[^0]. 
 
-```{r, message = FALSE}
+```{r cumulative, message = FALSE}
 library('cranlogs')
 library('ggplot2')
 library('ggthemes')
@@ -92,7 +92,7 @@ x %>%
 
 You can see that while the mean is increasing, the variance also increases:
 
-```{r}
+```{r by_year}
 x %>% 
   mutate(year = lubridate::year(date)) %>% 
   ggplot(aes(x = count)) +
@@ -156,6 +156,7 @@ has 81 public functions and 138 internal functions:
 
 ```{r}
 # devtools::install_github("grunwaldlab/poppr@9170398f")
+suppressPackageStartupMessages(library("poppr"))
 filterfun <- . %>% unclass() %>% `[`(!grepl(., pattern = "[<>]"))
 publicfun <- lsf.str("package:poppr") %>% 
   filterfun %>% 
@@ -166,8 +167,6 @@ allfun    <- lsf.str(envir = asNamespace("poppr"), all = TRUE) %>%
 publicfun
 allfun - publicfun
 ```
-
-
 
 All in all, *poppr* came out of being in the right place at the right time when
 both R and software development were becoming more accessible. It is still in
