@@ -29,26 +29,26 @@ library('dplyr')
 
 releases <- tibble::tribble(
   ~version,                        ~date,  ~size,
-  "1.0.0",	lubridate::ymd("2013-04-26"),	"2.5M",
-  "1.0.1",	lubridate::ymd("2013-07-03"),	"2.5M",
-  "1.0.3",	lubridate::ymd("2013-08-21"),	"2.5M",
-  "1.0.4",	lubridate::ymd("2013-12-04"),	"2.7M",
-  "1.0.5",	lubridate::ymd("2013-12-13"),	"2.4M",
-  "1.0.6",	lubridate::ymd("2014-03-05"),	"2.9M",
-  "1.1.0",	lubridate::ymd("2014-07-24"),	"1.9M",
-  "1.1.1",	lubridate::ymd("2014-07-27"),	"1.9M",
-  "1.1.2",	lubridate::ymd("2014-07-29"),	"1.8M",
-  "1.1.3",	lubridate::ymd("2015-02-03"),	"1.9M",
-  "1.1.4",	lubridate::ymd("2015-02-06"),	"1.9M",
-  "1.1.5",	lubridate::ymd("2015-05-13"),	"1.4M",
-  "2.0.0",	lubridate::ymd("2015-07-08"),	"2.1M",
-  "2.0.1",	lubridate::ymd("2015-07-14"),	"2.1M",
-  "2.0.2",	lubridate::ymd("2015-07-18"),	"2.1M",
-  "2.1.0",	lubridate::ymd("2015-12-01"),	"2.7M",
-  "2.1.1",	lubridate::ymd("2016-03-15"),	"2.7M",
-  "2.2.0",	lubridate::ymd("2016-06-13"),	"2.4M",
-  "2.2.1",	lubridate::ymd("2016-08-29"),	"3.8M",
-  "2.3.0",	lubridate::ymd("2016-11-23"),	"4.0M"
+  "1.0.0",  lubridate::ymd("2013-04-26"),  "2.5M",
+  "1.0.1",  lubridate::ymd("2013-07-03"),  "2.5M",
+  "1.0.3",  lubridate::ymd("2013-08-21"),  "2.5M",
+  "1.0.4",  lubridate::ymd("2013-12-04"),  "2.7M",
+  "1.0.5",  lubridate::ymd("2013-12-13"),  "2.4M",
+  "1.0.6",  lubridate::ymd("2014-03-05"),  "2.9M",
+  "1.1.0",  lubridate::ymd("2014-07-24"),  "1.9M",
+  "1.1.1",  lubridate::ymd("2014-07-27"),  "1.9M",
+  "1.1.2",  lubridate::ymd("2014-07-29"),  "1.8M",
+  "1.1.3",  lubridate::ymd("2015-02-03"),  "1.9M",
+  "1.1.4",  lubridate::ymd("2015-02-06"),  "1.9M",
+  "1.1.5",  lubridate::ymd("2015-05-13"),  "1.4M",
+  "2.0.0",  lubridate::ymd("2015-07-08"),  "2.1M",
+  "2.0.1",  lubridate::ymd("2015-07-14"),  "2.1M",
+  "2.0.2",  lubridate::ymd("2015-07-18"),  "2.1M",
+  "2.1.0",  lubridate::ymd("2015-12-01"),  "2.7M",
+  "2.1.1",  lubridate::ymd("2016-03-15"),  "2.7M",
+  "2.2.0",  lubridate::ymd("2016-06-13"),  "2.4M",
+  "2.2.1",  lubridate::ymd("2016-08-29"),  "3.8M",
+  "2.3.0",  lubridate::ymd("2016-11-23"),  "4.0M"
 )
 
 cols <- RColorBrewer::brewer.pal(3, "Set1")
@@ -84,10 +84,10 @@ increase per year?
 
 {% highlight r %}
 x %>% 
-	mutate(year = lubridate::year(date)) %>% 
-	group_by(year) %>%
-	summarize(`Average downloads/day` = mean(count), `Variance` = var(count)) %>%
-	knitr::kable(digits = 2)
+  mutate(year = lubridate::year(date)) %>% 
+  group_by(year) %>%
+  summarize(`Average downloads/day` = mean(count), `Variance` = var(count)) %>%
+  knitr::kable(digits = 2)
 {% endhighlight %}
 
 
@@ -105,12 +105,12 @@ You can see that while the mean is increasing, the variance also increases:
 
 {% highlight r %}
 x %>% 
-	mutate(year = lubridate::year(date)) %>% 
-	ggplot(aes(x = count)) +
-	geom_histogram(binwidth = 5) +
-	facet_wrap(~year, ncol = 1, scale = "free_y") +
-	theme_fivethirtyeight() +
-	ggtitle("Daily poppr downloads by year")
+  mutate(year = lubridate::year(date)) %>% 
+  ggplot(aes(x = count)) +
+  geom_histogram(binwidth = 5) +
+  facet_wrap(~year, ncol = 1, scale = "free_y") +
+  theme_fivethirtyeight() +
+  ggtitle("Daily poppr downloads by year")
 {% endhighlight %}
 
 <img src="http://zkamvar.github.io/figures/2016-12-29-poppr-downloads/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="100%" style="display: block; margin: auto;" />

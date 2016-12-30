@@ -6,7 +6,7 @@ tags: ['R', 'poppr', 'multilocus genotype', 'ggplot2']
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(fig.height = 15, fig.width = 5, out.width = "50%", 
-											fig.align = "center", dpi = 150)
+                      fig.align = "center", dpi = 150)
 ```
 
 Motivation
