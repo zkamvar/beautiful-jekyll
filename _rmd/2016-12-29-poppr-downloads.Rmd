@@ -154,7 +154,7 @@ according to PeerJ, it has been cited over 100 times.
 All in all, *poppr* came out of being in the right place at the right time when
 both R and software development were becoming more accessible. It is still in
 existence because I make sure that it's use-able and reliable. Tools like 
-[devtools][dt], [roxygen2][rg], [testthat][tt],  travis-ci[tv], and [git][git]
+[devtools][dt], [roxygen2][rg], [testthat][tt],  [travis-ci][tv], and [git][git]
 have made the development process so much easier. This, in turn gives me more
 time to focus on how people will actually use the software, which is important
 because if software is difficult to use, fewer people will want to use it.

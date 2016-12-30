@@ -6,11 +6,13 @@ title: About me
 Science
 -------
 
-I'm currently a Ph. D. candidate in the [Department of Botany and Plant
-Pathology][bpp] at [Oregon State University][osu]. My research centers around
-the population genetics of plant pathogens in the genus *Phytophthora*.
-Specifically, I develop computational tools for analyzing clonal populations in
-the R package [poppr][poppr].
+
+I have graduated with a Ph. D. from the [Department of Botany and Plant
+Pathology][bpp] at [Oregon State University][osu]. [My dissertation][diss]
+focuses on my development of computational tools for analyzing clonal
+populations in the R package [poppr][poppr]. I will be starting a post-doctoral
+postion in the lab of [Sydney E. Everhart][see] at the [Department of Plant
+Pathology at University of Nebraska, Lincoln][unl] in January of 2017.
 
 Radio
 -----
@@ -44,3 +46,6 @@ Beyond Science and Communication, these are a few of my favorite things
 [kbvr]: http://www.orangemedianetwork.com/kbvr_fm/
 [lastfm]: http://www.last.fm/user/DJPoopslice
 [joey]: http://jmhulbert.me/
+[diss]: https://zkamvar.github.io/dissertation
+[see]: http://plantpathology.unl.edu/sydney-everhart
+[unl]: http://plantpathology.unl.edu/
