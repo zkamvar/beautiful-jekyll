@@ -33,70 +33,8 @@ Analysis
 
 {% highlight r %}
 library("poppr")    # Note, v.2.2.0 or greater is needed for the %>% operator
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Loading required package: adegenet
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Loading required package: ade4
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## 
-##    /// adegenet 2.0.2 is loaded ////////////
-## 
-##    > overview: '?adegenet'
-##    > tutorials/doc/questions: 'adegenetWeb()' 
-##    > bug reports/feature requests: adegenetIssues()
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## This is poppr version 2.2.1. To get started, type package?poppr
-## OMP parallel support: available
-{% endhighlight %}
-
-
-
-{% highlight r %}
 library("ggplot2")  # Plotting
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## Need help? Try the ggplot2 mailing list:
-## http://groups.google.com/group/ggplot2.
-{% endhighlight %}
-
-
-
-{% highlight r %}
 library("cowplot")  # Grouping the plots
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## 
-## Attaching package: 'cowplot'
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## The following object is masked from 'package:ggplot2':
-## 
-##     ggsave
 {% endhighlight %}
 
 The data from the paper has been stored in *poppr* as "Pram", but it includes 
@@ -123,9 +61,9 @@ Pram
 ## 
 ## Population information:
 ## 
-##      3 strata - SOURCE YEAR STATE
-##      9 populations defined - Nursery_CA Nursery_OR JHallCr_OR ... 
-## Winchuck_OR ChetcoMain_OR PistolRSF_OR
+##      3 strata - SOURCE, YEAR, STATE
+##      9 populations defined - 
+## Nursery_CA, Nursery_OR, JHallCr_OR, ..., Winchuck_OR, ChetcoMain_OR, PistolRSF_OR
 {% endhighlight %}
 
 
@@ -174,7 +112,7 @@ bars <- ggplot(mlg_order, aes(x = MLG, y = Count, fill = MLG)) +
 bars
 {% endhighlight %}
 
-<img src="http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/barplot-1.png" title="plot of chunk barplot" alt="plot of chunk barplot" style="display: block; margin: auto;" />
+<img src="http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/barplot-1.png" title="plot of chunk barplot" alt="plot of chunk barplot" width="50%" style="display: block; margin: auto;" />
 
 Creating the Subway plot
 ------------------------
@@ -207,7 +145,7 @@ ranges <- ggplot(mlg_range, aes(x = Year, y = MLG, group = MLG, color = MLG)) +
 ranges
 {% endhighlight %}
 
-<img src="http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/subwayplot-1.png" title="plot of chunk subwayplot" alt="plot of chunk subwayplot" style="display: block; margin: auto;" />
+<img src="http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/subwayplot-1.png" title="plot of chunk subwayplot" alt="plot of chunk subwayplot" width="50%" style="display: block; margin: auto;" />
 
 > **A word on margins**
 > 
@@ -231,10 +169,10 @@ over to the other in 2 minutes in inkscape.
 
 
 {% highlight r %}
-plot_grid(ranges, bars, align = "h", rel_widths = c(2.5, 1))
+cowplot::plot_grid(ranges, bars, align = "h", rel_widths = c(2.5, 1))
 {% endhighlight %}
 
-<img src="http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/cowplot-1.png" title="plot of chunk cowplot" alt="plot of chunk cowplot" style="display: block; margin: auto;" />
+<img src="http://zkamvar.github.io/figures/2016-02-10-recreating-fig-3/cowplot-1.png" title="plot of chunk cowplot" alt="plot of chunk cowplot" width="50%" style="display: block; margin: auto;" />
 
 Conclusion
 ==========
@@ -263,13 +201,13 @@ devtools::session_info()
 
 {% highlight text %}
 ##  setting  value                       
-##  version  R version 3.3.1 (2016-06-21)
+##  version  R version 3.3.2 (2016-10-31)
 ##  system   x86_64, darwin13.4.0        
-##  ui       X11                         
+##  ui       RStudio (1.0.44)            
 ##  language (EN)                        
 ##  collate  en_US.UTF-8                 
 ##  tz       America/Los_Angeles         
-##  date     2016-09-05
+##  date     2016-12-29
 {% endhighlight %}
 
 
@@ -281,65 +219,77 @@ devtools::session_info()
 
 
 {% highlight text %}
-##  package    * version     date       source                                  
-##  ade4       * 1.7-4       2016-03-01 CRAN (R 3.2.3)                          
-##  adegenet   * 2.0.2       2016-09-02 Github (thibautjombart/adegenet@a349841)
-##  ape          3.5         2016-05-24 CRAN (R 3.3.0)                          
-##  assertthat   0.1         2013-12-06 CRAN (R 3.2.0)                          
-##  boot         1.3-18      2016-02-23 CRAN (R 3.2.3)                          
-##  cluster      2.0.4       2016-04-18 CRAN (R 3.3.0)                          
-##  coda         0.18-1      2015-10-16 CRAN (R 3.2.0)                          
-##  colorspace   1.2-6       2015-03-11 CRAN (R 3.2.0)                          
-##  cowplot    * 0.6.2       2016-04-20 CRAN (R 3.2.5)                          
-##  DBI          0.4-1       2016-05-08 CRAN (R 3.3.0)                          
-##  deldir       0.1-12      2016-03-06 CRAN (R 3.2.4)                          
-##  devtools     1.12.0      2016-06-24 CRAN (R 3.3.0)                          
-##  digest       0.6.10      2016-08-02 CRAN (R 3.3.0)                          
-##  dplyr        0.5.0       2016-06-24 CRAN (R 3.3.0)                          
-##  evaluate     0.9         2016-04-29 CRAN (R 3.2.5)                          
-##  fastmatch    1.0-4       2012-01-21 CRAN (R 3.2.0)                          
-##  formatR      1.4         2016-05-09 CRAN (R 3.3.0)                          
-##  gdata        2.17.0      2015-07-04 CRAN (R 3.2.0)                          
-##  ggplot2    * 2.1.0       2016-03-01 CRAN (R 3.3.0)                          
-##  gmodels      2.16.2      2015-07-22 CRAN (R 3.2.0)                          
-##  gtable       0.2.0       2016-02-26 CRAN (R 3.2.3)                          
-##  gtools       3.5.0       2015-05-29 CRAN (R 3.2.0)                          
-##  htmltools    0.3.5       2016-03-21 CRAN (R 3.2.4)                          
-##  httpuv       1.3.3       2015-08-04 CRAN (R 3.2.0)                          
-##  igraph       1.0.1       2015-06-26 CRAN (R 3.2.0)                          
-##  knitr      * 1.14        2016-08-13 cran (@1.14)                            
-##  labeling     0.3         2014-08-23 CRAN (R 3.2.0)                          
-##  lattice      0.20-33     2015-07-14 CRAN (R 3.2.0)                          
-##  LearnBayes   2.15        2014-05-29 CRAN (R 3.2.0)                          
-##  magrittr     1.5         2014-11-22 CRAN (R 3.2.0)                          
-##  MASS         7.3-45      2015-11-10 CRAN (R 3.2.2)                          
-##  Matrix       1.2-6       2016-05-02 CRAN (R 3.3.0)                          
-##  memoise      1.0.0       2016-01-29 CRAN (R 3.2.3)                          
-##  mgcv         1.8-13      2016-07-21 CRAN (R 3.3.0)                          
-##  mime         0.5         2016-07-07 cran (@0.5)                             
-##  munsell      0.4.3       2016-02-13 CRAN (R 3.2.3)                          
-##  nlme         3.1-128     2016-05-10 CRAN (R 3.3.0)                          
-##  nnls         1.4         2012-03-19 CRAN (R 3.2.0)                          
-##  pegas        0.9         2016-04-16 CRAN (R 3.2.5)                          
-##  permute      0.9-0       2016-01-24 CRAN (R 3.2.3)                          
-##  phangorn     2.0.4       2016-06-21 CRAN (R 3.3.0)                          
-##  plyr         1.8.4       2016-06-08 CRAN (R 3.3.0)                          
-##  poppr      * 2.2.1       2016-08-29 CRAN (R 3.3.1)                          
-##  quadprog     1.5-5       2013-04-17 CRAN (R 3.2.0)                          
-##  R6           2.1.3       2016-08-19 cran (@2.1.3)                           
-##  Rcpp         0.12.6      2016-07-19 CRAN (R 3.3.0)                          
-##  reshape2     1.4.1       2014-12-06 CRAN (R 3.2.0)                          
-##  scales       0.4.0       2016-02-26 CRAN (R 3.2.3)                          
-##  seqinr       3.3-0       2016-07-19 CRAN (R 3.3.0)                          
-##  shiny        0.13.2.9005 2016-09-02 Github (rstudio/shiny@1ff52c5)          
-##  sp           1.2-3       2016-04-14 CRAN (R 3.3.0)                          
-##  spdep        0.6-6       2016-07-30 CRAN (R 3.3.0)                          
-##  stringi      1.1.1       2016-05-27 CRAN (R 3.3.0)                          
-##  stringr      1.0.0       2015-04-30 CRAN (R 3.2.0)                          
-##  tibble       1.2         2016-08-26 cran (@1.2)                             
-##  vegan        2.4-0       2016-06-15 CRAN (R 3.3.0)                          
-##  withr        1.0.2       2016-06-20 cran (@1.0.2)                           
-##  xtable       1.8-2       2016-02-05 CRAN (R 3.2.3)
+##  package      * version     date       source                                  
+##  ade4         * 1.7-5       2016-12-13 CRAN (R 3.3.2)                          
+##  adegenet     * 2.0.2       2016-12-28 Github (thibautjombart/adegenet@78d2045)
+##  ape            4.0         2016-12-01 CRAN (R 3.3.2)                          
+##  assertthat     0.1         2013-12-06 CRAN (R 3.2.0)                          
+##  backports      1.0.4       2016-10-24 cran (@1.0.4)                           
+##  boot           1.3-18      2016-02-23 CRAN (R 3.2.3)                          
+##  cluster        2.0.4       2016-04-18 CRAN (R 3.3.0)                          
+##  coda           0.18-1      2015-10-16 CRAN (R 3.2.0)                          
+##  colorspace     1.2-6       2015-03-11 CRAN (R 3.2.0)                          
+##  cowplot      * 0.7.0       2016-10-28 CRAN (R 3.3.0)                          
+##  cranlogs     * 2.1.1       2016-06-06 Github (metacran/cranlogs@77182ee)      
+##  curl           2.3         2016-11-24 CRAN (R 3.3.2)                          
+##  DBI            0.4-1       2016-05-08 CRAN (R 3.3.0)                          
+##  deldir         0.1-12      2016-03-06 CRAN (R 3.2.4)                          
+##  devtools       1.12.0      2016-06-24 CRAN (R 3.3.0)                          
+##  digest         0.6.10      2016-08-02 CRAN (R 3.3.0)                          
+##  dplyr        * 0.5.0       2016-06-24 CRAN (R 3.3.0)                          
+##  evaluate       0.10        2016-10-11 cran (@0.10)                            
+##  fastmatch      1.0-4       2012-01-21 CRAN (R 3.2.0)                          
+##  gdata          2.17.0      2015-07-04 CRAN (R 3.2.0)                          
+##  ggplot2      * 2.2.0       2016-11-11 CRAN (R 3.3.2)                          
+##  ggthemes     * 3.2.0       2016-07-11 CRAN (R 3.3.0)                          
+##  gmodels        2.16.2      2015-07-22 CRAN (R 3.2.0)                          
+##  gtable         0.2.0       2016-02-26 CRAN (R 3.2.3)                          
+##  gtools         3.5.0       2015-05-29 CRAN (R 3.2.0)                          
+##  highr          0.6         2016-05-09 CRAN (R 3.3.0)                          
+##  htmltools      0.3.5       2016-03-21 CRAN (R 3.2.4)                          
+##  httpuv         1.3.3       2015-08-04 CRAN (R 3.2.0)                          
+##  httr           1.2.1       2016-07-03 cran (@1.2.1)                           
+##  igraph         1.0.1       2015-06-26 CRAN (R 3.2.0)                          
+##  jsonlite       1.1         2016-09-14 cran (@1.1)                             
+##  knitr        * 1.15.6      2016-12-25 Github (yihui/knitr@849f2d0)            
+##  labeling       0.3         2014-08-23 CRAN (R 3.2.0)                          
+##  lattice        0.20-33     2015-07-14 CRAN (R 3.2.0)                          
+##  lazyeval       0.2.0.9000  2016-07-01 Github (hadley/lazyeval@c155c3d)        
+##  LearnBayes     2.15        2014-05-29 CRAN (R 3.2.0)                          
+##  lubridate    * 1.5.6       2016-04-06 CRAN (R 3.2.4)                          
+##  magrittr       1.5         2014-11-22 CRAN (R 3.2.0)                          
+##  MASS           7.3-45      2015-11-10 CRAN (R 3.2.2)                          
+##  Matrix         1.2-6       2016-05-02 CRAN (R 3.3.0)                          
+##  memoise        1.0.0       2016-01-29 CRAN (R 3.2.3)                          
+##  mgcv           1.8-13      2016-07-21 CRAN (R 3.3.0)                          
+##  mime           0.5         2016-07-07 cran (@0.5)                             
+##  munsell        0.4.3       2016-02-13 CRAN (R 3.2.3)                          
+##  nlme           3.1-128     2016-05-10 CRAN (R 3.3.0)                          
+##  pegas          0.9         2016-04-16 CRAN (R 3.2.5)                          
+##  permute        0.9-4       2016-09-09 cran (@0.9-4)                           
+##  phangorn       2.1.1       2016-12-04 cran (@2.1.1)                           
+##  plyr           1.8.4       2016-06-08 CRAN (R 3.3.0)                          
+##  poppr        * 2.3.0.99-16 2016-12-26 local                                   
+##  quadprog       1.5-5       2013-04-17 CRAN (R 3.2.0)                          
+##  R6             2.2.0       2016-10-05 cran (@2.2.0)                           
+##  RColorBrewer   1.1-2       2014-12-07 CRAN (R 3.2.0)                          
+##  Rcpp           0.12.8      2016-11-17 cran (@0.12.8)                          
+##  reshape2       1.4.2       2016-10-22 cran (@1.4.2)                           
+##  rmarkdown      1.3         2016-12-25 Github (rstudio/rmarkdown@3276760)      
+##  rprojroot      1.1         2016-10-29 cran (@1.1)                             
+##  rsconnect      0.5         2016-10-17 cran (@0.5)                             
+##  scales         0.4.1       2016-11-09 CRAN (R 3.3.2)                          
+##  seqinr         3.3-3       2016-10-13 cran (@3.3-3)                           
+##  shiny          0.14.2.9001 2016-12-28 Github (rstudio/shiny@1962369)          
+##  sp             1.2-3       2016-04-14 CRAN (R 3.3.0)                          
+##  spdep          0.6-8       2016-09-21 CRAN (R 3.3.0)                          
+##  stringi        1.1.1       2016-05-27 CRAN (R 3.3.0)                          
+##  stringr        1.1.0       2016-08-19 cran (@1.1.0)                           
+##  tibble         1.2         2016-08-26 cran (@1.2)                             
+##  vegan          2.4-1       2016-09-07 cran (@2.4-1)                           
+##  withr          1.0.2       2016-06-20 cran (@1.0.2)                           
+##  xtable         1.8-2       2016-02-05 CRAN (R 3.2.3)                          
+##  yaml           2.1.14      2016-11-12 cran (@2.1.14)
 {% endhighlight %}
 [fig3]: https://www.researchgate.net/publication/278039693_Spatial_and_Temporal_Analysis_of_Populations_of_the_Sudden_Oak_Death_Pathogen_in_Oregon_Forests/figures
 [sod]: http://apsjournals.apsnet.org/doi/10.1094/PHYTO-12-14-0350-FI

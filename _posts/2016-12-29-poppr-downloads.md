@@ -73,7 +73,7 @@ x %>%
             lty = "Release"))
 {% endhighlight %}
 
-<img src="http://zkamvar.github.io/figures/2016-12-29-poppr-downloads/unnamed-chunk-20-1.png" title="plot of chunk unnamed-chunk-20" alt="plot of chunk unnamed-chunk-20" width="50%" style="display: block; margin: auto;" />
+<img src="http://zkamvar.github.io/figures/2016-12-29-poppr-downloads/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="100%" style="display: block; margin: auto;" />
 
 You can see above that I submitted a lot of patch versions early on, and even
 had to submit some within a few days of each other, but as time went along, I
@@ -113,7 +113,7 @@ x %>%
 	ggtitle("Daily poppr downloads by year")
 {% endhighlight %}
 
-<img src="http://zkamvar.github.io/figures/2016-12-29-poppr-downloads/unnamed-chunk-22-1.png" title="plot of chunk unnamed-chunk-22" alt="plot of chunk unnamed-chunk-22" width="50%" style="display: block; margin: auto;" />
+<img src="http://zkamvar.github.io/figures/2016-12-29-poppr-downloads/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="100%" style="display: block; margin: auto;" />
 
 
 

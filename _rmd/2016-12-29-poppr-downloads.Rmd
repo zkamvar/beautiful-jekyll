@@ -5,8 +5,8 @@ tags: ['R', 'poppr', 'CRAN', 'cranlogs', 'grad school']
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(fig.height = 5, fig.width = 7, out.width = "50%", 
-											fig.align = "center", dpi = 150)
+knitr::opts_chunk$set(fig.height = 5, fig.width = 7, out.width = "100%", 
+                      fig.align = "center", dpi = 150)
 ```
 
 My R package [poppr](https://github.com/grunwaldlab/poppr#readme) hit over 
