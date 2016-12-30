@@ -11,7 +11,7 @@ My R package [poppr](https://github.com/grunwaldlab/poppr#readme) hit over
 this would be a nice opportunity to briefly talk about what initiated the 
 development. Before that, let's look at the cumulative number of downloads:
 
-## Downloads from CRAN
+## CRAN you dig it?
 
 Thanks to the fantastic cranlogs package, assessing the download history of a
 package is quite simple (with the caveat that these are logs from the rstudio
@@ -115,9 +115,7 @@ x %>%
 
 <img src="http://zkamvar.github.io/figures/2016-12-29-poppr-downloads/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="100%" style="display: block; margin: auto;" />
 
-
-
-## History
+## Developing poppr
 
 If someone told me five years ago that [my dissertation][0][^1]
 would be centered around an R package I developed, I probably would not have 
@@ -130,24 +128,29 @@ back... [at a party][1].
 
 You get the gist. When I started my rotation in the *Phytophthora* lab, my first
 task was to simulate populations of partially-clonal diploids and analyze the
-[standardized index of association, $\bar{r}_d$][2] to see how it behaved under
-different population genetic scenarios[^2]. I was able to get the simulations
-up and running in a couple of months after learning Python, but when it came
-time to analyze the data, the only program that could calculate $\bar{r}_d$ was
-[Multilocus](http://www.agapow.net/software/multilocus/). At the time it was
+[standardized index of association][2] to see how it behaved under different
+population genetic scenarios[^2]. I was able to get the simulations up and
+running in a couple of months after learning Python, but when it came time to
+analyze the data, the only program that could calculate the index of association
+was [Multilocus](http://www.agapow.net/software/multilocus/). At the time it was
 only possible to get this from third-party download sites and it could only run
 on Windows and OSX platforms. Once you were able to download this and run it,
 you could only analyze one data set at a time and [it was slow][4][^3]. If I
 wanted to have any hope of completing this project, I had to find another way.
 My advisor suggested, "Why don't you rewrite this analysis in R?" Without
-knowing any better, I tried it out and spent the next few weeks desparately 
-trying to figure out how to implement $\bar{r}_d$ in R. 
+knowing any better, I tried it out and spent the next few weeks desperately
+trying to figure out how to implement the index of association in R.
 
-Eventually, my script worked and then the suggestion came: "You should make an
-R package out of this." Before I knew it, I was signed up for Hadley Wickham's
-[R development masterclass][5] in June of 2012. After that, I began working on
-making the package that would eventually become poppr[^4] and first presented
-version 0.2 at the [27th Fungal Genetics Conference][6] in March 2013. 
+Eventually, my script worked and then the suggestion came: "You should make an R
+package out of this." Serendipitously, Hadley Wickham was teaching an [R
+development masterclass][5] in June of 2012. Before I knew it, I was signed up
+for the course. After that, I began working on making the package that would
+eventually become *poppr*, relying heavily on the code for [*adegenet*][5.1]
+for inspiration. I presented a poster for version 0.2 at the [27th Fungal
+Genetics Conference][6] in March 2013.
+
+> While *poppr* is not the best name in the world, there were [far worse
+> suggestions](https://github.com/zkamvar/PiG_Multitool#whats-in-a-name).
 
 After R had officially released version [3.0.0][6.1] and the packages poppr
 depended upon finally were working again, I submitted to CRAN, but I didn't get
@@ -155,12 +158,19 @@ there in one try. I got a relatively tame email from Brian Ripley about the
 vignette and some examples running too long. After that, we made our first
 submission to a journal.
 
-After being rejected from two journals, we revised a third draft and [submitted
-it as a pre-print][7] to PeerJ. After about a month, we got [positive reviews
-with minor revisions][8], and [the paper][9] was published on March 4th, 2014.
-As of now, according to PeerJ, it has been cited over 100 times.
+The first two journals we submitted to rejected us right out (that is, three 
+months after submission), so we revised a third draft and [submitted it as a 
+pre-print][7] to PeerJ. After about a month, we got [positive reviews with minor
+revisions][8], and [the paper][9] was published on March 4th, 2014. As of now,
+according to PeerJ, it has been cited over 100 times.
 
-
+All in all, *poppr* came out of being in the right place at the right time when
+both R and software development were becoming more accessible. It is still in
+existence because I make sure that it's use-able and reliable. Tools like 
+[devtools][dt], [roxygen2][rg], [testthat][tt],  travis-ci[tv], and [git][git]
+have made the development process so much easier. This, in turn gives me more
+time to focus on how people will actually use the software, which is important
+because if software is difficult to use, fewer people will want to use it.
 
 [0]: http://hdl.handle.net/1957/60042
 [1]: https://youtu.be/l7iVsdRbhnc
@@ -168,14 +178,20 @@ As of now, according to PeerJ, it has been cited over 100 times.
 [3]: http://simupop.sourceforge.net/
 [4]: https://peerj.com/articles/281/#table-6
 [5]: http://courses.had.co.nz/12-devtools/
+[5.1]: https://github.com/thibautjombart/adegenet
 [6]: http://www.fgsc.net/27thFGC/index.htm
 [6.1]: https://www.r-statistics.com/2013/04/r-3-0-0-is-released-whats-new-and-how-to-upgrade/
 [7]: https://peerj.com/preprints/161/
 [8]: https://peerj.com/articles/281/reviews/
 [9]: https://peerj.com/articles/281/
+[dt]: https://CRAN.R-project.org/package=devtools
+[rg]: https://CRAN.R-project.org/package=roxygen2
+[tt]: https://CRAN.R-project.org/package=testthat
+[tv]: https://travis-ci.org
+[git]: https://git-scm.com/ 
 
-[^0]: See <http://yihui.name/en/2013/06/r-package-versioning/>. Major == breaking changes | Minor == new functions | Patch == bug fixes/documentation improvements
+[^0]: See <http://yihui.name/en/2013/06/r-package-versioning/>. Major == breaking changes \| Minor == new functions \| Patch == bug fixes/documentation improvements
 [^1]: Here's a web version in case you don't want to download the 192 page PDF ^_^ <https://zkamvar.github.io/dissertation>
 [^2]: This project eventually became the fifth chapter in my dissertation <https://zkamvar.github.io/dissertation/5-factors-influencing-inference-of-clonality-in-diploid-populations.html>
 [^3]: The most recent version of the program has sped up considerably and is now open source <https://github.com/agapow/multilocus>
-[^4]: It wasn't always going to be called poppr: <https://github.com/zkamvar/PiG_Multitool#whats-in-a-name>
+
