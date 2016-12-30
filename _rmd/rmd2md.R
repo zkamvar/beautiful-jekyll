@@ -14,9 +14,14 @@ library('knitr')
 rmd2md <- function(file, path_site = "~/Documents/zkamvar.github.io") {
   ## Get knitr
 	## Read in the rmd file
-	content <- readLines(file.path(path_site, "_rmd", paste0(file, ".Rmd")))
+	rmd     <- if (grepl("_rmd", file)) "" else "_rmd"
+	infile  <- if (grepl("\\.Rmd", file)) file else paste0(file, ".Rmd")
+
+	content <- readLines(file.path(path_site, rmd, file))
 	## Create output file name
-	outFile <- file.path(path_site, "_posts", paste0(file, ".md"))
+	outFile <- gsub("_rmd", "_posts", infile)
+	outFile <- gsub("\\.Rmd$", ".md", outFile)
+	file    <- gsub("_rmd/(.+?)\\.Rmd", "\\1", file)
 	## Set the rendering engine
 	knitr::render_jekyll(highlight = "pygments")
 	## Set the output format to markdown
