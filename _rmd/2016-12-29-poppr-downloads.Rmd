@@ -16,7 +16,7 @@ development. Before that, let's look at the cumulative number of downloads:
 
 ## CRAN you dig it?
 
-Thanks to the fantastic cranlogs package, assessing the download history of a
+Thanks to the fantastic [cranlogs] package, assessing the download history of a
 package is quite simple (with the caveat that these are logs from the rstudio
 mirror, so the value is almost always lower than the true value). Here, I've
 created a graph that shows the cumulative number of downloads over the years,
@@ -133,8 +133,8 @@ package out of this." Serendipitously, Hadley Wickham was teaching an [R
 development masterclass][5] in June of 2012. Before I knew it, I was signed up
 for the course. After that, I began working on making the package that would
 eventually become *poppr*, relying heavily on the code for [*adegenet*][5.1]
-for inspiration. I presented a poster for version 0.2 at the [27th Fungal
-Genetics Conference][6] in March 2013.
+for inspiration. The first public exhibition of *poppr* was a poster for version
+0.2 at the [27th Fungal Genetics Conference][6] in March 2013.
 
 > While *poppr* is not the best name in the world, there were [far worse
 > suggestions](https://github.com/zkamvar/PiG_Multitool#whats-in-a-name).
@@ -172,7 +172,10 @@ All in all, *poppr* came out of being in the right place at the right time when
 both R and software development were becoming more accessible. It is still in
 existence because I make sure that it's use-able and reliable. Tools like 
 [devtools][dt], [roxygen2][rg], [testthat][tt],  [travis-ci][tv], and [git][git]
-have made the development process so much easier. This, in turn gives me more
+have made the development process so much easier.
+
+
+This, in turn gives me more
 time to focus on how people will actually use the software, which is important
 because if software is difficult to use, fewer people will want to use it.
 
@@ -195,6 +198,7 @@ because if software is difficult to use, fewer people will want to use it.
 [tv]: https://travis-ci.org
 [git]: https://git-scm.com/ 
 [nowpop]: https://github.com/grunwaldlab/poppr/commit/9170398f6552f27ab69b294172c97c8ee7a97ce0
+[cranlogs]: https://cranlogs.r-pkg.org/
 
 [^0]: See <http://yihui.name/en/2013/06/r-package-versioning/>. Major == breaking changes \| Minor == new functions \| Patch == bug fixes/documentation improvements
 [^1]: Here's a web version in case you don't want to download the 192 page PDF ^_^ <https://zkamvar.github.io/dissertation>
